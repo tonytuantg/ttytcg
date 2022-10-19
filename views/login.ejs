@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Login
+	</title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body id="login" ng-app="TTYT">
+
+	<div class="container" ng-controller="check_login">
+		<div class="screen">
+			<div class="screen__content">
+				<h2 id="caption">LOG IN</h2>
+				<!-- <form class="login" action="/check_login" method="post"> -->
+				<form class="login" method="post">
+					<div class="login__field">
+						<i class="login__icon fas fa-user"></i>
+						<input type="text" class="login__input" placeholder="User name" name="username"
+							ng-model="username">
+					</div>
+					<div class="login__field">
+						<i class="login__icon fas fa-lock"></i>
+						<input type="password" class="login__input" placeholder="Password" name="password"
+							ng-model="password">
+					</div>
+					<button class="button login__submit" ng-click="validate()" ng-show="hienLoading">
+						<span class="button__text">Log In Now</span>
+						<i class="button__icon fas fa-chevron-right"></i>
+					</button>
+					<img src="../images/loading.gif" alt="" style="width: 70px;" ng-hide="hienLoading">
+				</form>
+			</div>
+			<div class="screen__background">
+				<span class="screen__background__shape screen__background__shape4"></span>
+				<span class="screen__background__shape screen__background__shape3"></span>
+				<span class="screen__background__shape screen__background__shape2"></span>
+				<span class="screen__background__shape screen__background__shape1"></span>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+
+<script src="/javascripts/angular.min.js"></script>
+<script src="/javascripts/main.js"></script>
+
+</html>

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "so-chuyen-vien",
+  "private_key_id": "c49f261b7d55107352bdff5c6710c697cbb9b244",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDUgJrAwIs0L2sS\n/z75/mwxWS2O9DTZXpAd6L7DwxcgdcIsZwzfcvk6qFW00jNFdVUlWv4ocB0WseOq\nCpytIHKPxGVvSlqpxirU2FkfmTnfdqSvXylYHsEiJ02wlz2taQAaB4YWdR4P2jBL\nKK+7vlvvn+Sda25SRHP61PG1lAVz5FHRyvMnRLIoFnLN9Bk30jf+Nwl4KjOaCLnF\n7auskkDcmqObYB/ozm3UEcOomGh4mRCnkeW3Deia3vhcHiEPPuwStboEjuesFmKK\n0SKBgXeorF/CRv8jxd9JQo0WuxAuCQFXgYQV0s+Cs3XyRrLS01x/wJoqrAhJh0fc\nTTM9zCdRAgMBAAECggEABkFIgjAjY38aKADpkJAXt7ElY+iWI1LYVk+1nnYK43qh\nOKTfjmE9laeC/v5T94avYa4xaS0kUg4c7TJVmnaoIJ66PKHOlDeVfFaSSFmT3Zsf\nWFvU+qIhyGNUna7UqDAnylxagE/kuWM7BNoBqDqqIp4igNa6ydhNe1PoJH04Vt5T\nGXPn908/1omZ3cw/uHpGiXwtGuMQjj7lXB20sWghwlPA6EXxvtmc+Cd0TeIJq1+x\n0GcUTBzDGdUdG2W7f09vGc9kkTBPMgDUUfe2f7nDO9B8H1o5d1LZnlJp8HXt1gDR\nbJ7M7K1Z8L/xeuGtZJhjZKwhAkhCuKDVJ8E+eE1r5QKBgQD93fBkJ7DIOMt6BEIl\n/NlIXiocm4Su2C6tMy3T/VoBF1u2BF2+NFLIbk7mB1I80HDqADfxxeZZcrxviVBG\nRyfsGAlf3IZC3ziSBP5lVW0U6kT6H9oSNSBS819yfPtWEZFs16OkUPxAMXA6aB0g\nb9SUGcOqQi0zi0fsiJEyedLYhQKBgQDWSbD9ATVAyR1sH1SF4lYxYR6po19nAxrl\nGlJMHlyZdnYXZk3PqvJrW9GDW0VSt5oWQG4nJBKHvvLHkc+PgoGHrrM/PVDzUgh9\n4pz26EEoOLI6q6hj/vBE4kkIBC9nT9vnbS5BJ9VAFwJgHLyjs6dop4T91Plcq6Oz\nJPgT5B0zXQKBgQCjD54rxq6vPIO94ORYIBu0dv9XlrDX2XXJvBjQlGfuUYGP3SgV\nVuhhYzD8YXF6LGyKcQ9+FR5LD/5nKezM50GGTT4gO7ZlV5mveNOqZP+Gsp8Rhcn9\nbfBQN5B0KkEJ3IjrP2sVzQrpdJfgfCVRQ2NoqU/bmVwNQoY1MNcKc+NxPQKBgQCg\nAQBFuiwwRrtQa4hqO9mOH22Mzy9CNMBVRzUiHx2XfSuqRzpckNFYNoQXaAQ4Ql2s\ntclKMpYfhAW13Hs2NgVP8bNnyfny5VLv5FC90Cguxz7Vri0bFVYEqU5MzQs0Qh36\nDL0X641AwK2GZI66UT/0VfloqyjS+FpQPo96Er93BQKBgBwd9HBSmQ+LwMikSwqK\ngCqgzE46eB/5mOh2GZq1u6bxXw57odZuPYJ4AWeL1uXIPYKTXmQ5wydp3Tp82RtU\n/7g+EsyoY4sNuBSYv2JX7PcWLl/40MgxJcWOFGSTCeZ0Xsk/ZrZ5bE0AWC5dXgEd\nihqGOPxLUT09BQXBgu5S0o+w\n-----END PRIVATE KEY-----\n",
+  "client_email": "sochuyenvien@so-chuyen-vien.iam.gserviceaccount.com",
+  "client_id": "111289525763770619372",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sochuyenvien%40so-chuyen-vien.iam.gserviceaccount.com"
+}
