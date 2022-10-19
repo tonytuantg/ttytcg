@@ -1,1 +1,1 @@
-worker: node routes/chuyenvien.js
+worker: node app.js
