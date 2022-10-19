@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
      // }else{
      //      res.render('home', { title: 'Trang chủ 123', user: req.session.tenTaiKhoan } );
      // }    
-     res.send("Hello") ;
+     res.send({"kq" : getData.getDataSheet('taikhoan_khoaphong','1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ')}) ;
 });	
 
 router.post('/check_loginServer', cors(), async function(req, res, next) {
