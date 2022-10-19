@@ -60,7 +60,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(6969, () => {
+app.listen(process.env.PORT || 6969, () => {
   console.log("Is start");
 })
 module.exports = app;
