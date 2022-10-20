@@ -23,8 +23,8 @@ router.get('/', async function(req, res, next) {
 
 router.post('/check_loginServer', cors(), async function(req, res, next) {
     
-     var trangthai = 0;
-     var tenTaiKhoan= '';
+     const trangthai = 0;
+     const tenTaiKhoan= '';
      var username = req.body.username;
      var password = req.body.password;
      // var sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
