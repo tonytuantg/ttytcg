@@ -15,16 +15,16 @@ router.get('/', async function(req, res, next) {
      // res.send('hello');
      // const dateString = new Date();
      // const sheetTitle = dateString.getFullYear();
-     var sheetTitle = 'taikhoan_khoaphong';
-     const kq = '';
-     const user = await getDataApiGgl.kq(sheetTitle);
-     const soDongTrongSheet = user.data.valueRanges[0].values.length;
-     for (var i = 1; i < soDongTrongSheet; i++) {
-          if(user.data.valueRanges[0].values[i][0] == 'khth' && user.data.valueRanges[0].values[i][2] == '123'){
-               kq = 1;
-          }
-     }
-     res.send({"kq" : kq}) ;
+     // var sheetTitle = 'taikhoan_khoaphong';
+     // const kq = '';
+     // const user = await getDataApiGgl.kq(sheetTitle);
+     // const soDongTrongSheet = user.data.valueRanges[0].values.length;
+     // for (var i = 1; i < soDongTrongSheet; i++) {
+     //      if(user.data.valueRanges[0].values[i][0] == 'khth' && user.data.valueRanges[0].values[i][2] == '123'){
+     //           kq = 1;
+     //      }
+     // }
+     res.send({"kq" : 'hello'}) ;
      // res.send({"kq" : user.data.valueRanges[0].values.length}) ;
 });	
 
