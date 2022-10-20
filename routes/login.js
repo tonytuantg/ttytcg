@@ -6,7 +6,7 @@ var router = express.Router();
 const getData = require('../getDataGoogleSheet');
 const getDataApiGgl = require('../getDataUsingGoogleApi');
 
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
      // if(!req.session.tenTaiKhoan){
      //      res.render('login', { title: 'Log in', layout: false } );
      // }else{
@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
      // const dateString = new Date();
      // const sheetTitle = dateString.getFullYear();
      var sheetTitle = 'taikhoan_khoaphong';
-     const user = getDataApiGgl.kq(sheetTitle);
+     const user = await getDataApiGgl.kq(sheetTitle);
      res.send({"kq" : user.data.valueRanges[0].values[1][0]}) ;
 });	
 
