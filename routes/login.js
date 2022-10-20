@@ -17,7 +17,8 @@ router.get('/', async function(req, res, next) {
      // const sheetTitle = dateString.getFullYear();
      var sheetTitle = 'taikhoan_khoaphong';
      const user = await getDataApiGgl.kq(sheetTitle);
-     res.send({"kq" : user.data.valueRanges[0].values[1][0]}) ;
+     // res.send({"kq" : user.data.valueRanges[0].values[1][0]}) ;
+     res.send({"kq" : user.data.valueRanges[0].values.length}) ;
 });	
 
 router.post('/check_loginServer', cors(), async function(req, res, next) {
