@@ -25,10 +25,10 @@ router.get('/', async function(req, res, next) {
      //      }
      // }
      res.send({"kq" : 'hello'}) ;
-     // res.send({"kq" : user.data.valueRanges[0].values.length}) ;
+     // res.send({"kq" : user.data.valueRanges[0].values.length}) ;  cors(),
 });	
 
-router.post('/check_loginServer', cors(), async function(req, res, next) {
+router.post('/check_loginServer', async function(req, res, next) {
     
      const trangthai = 0;
      const tenTaiKhoan= '';
