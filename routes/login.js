@@ -4,6 +4,7 @@ var cors = require('cors');
 var router = express.Router();
 
 const getData = require('../getDataGoogleSheet');
+const getDataApiGgl = require('../getDataUsingGoogleApi');
 
 router.get('/', function(req, res, next) {
      // if(!req.session.tenTaiKhoan){
@@ -12,7 +13,9 @@ router.get('/', function(req, res, next) {
      //      res.render('home', { title: 'Trang chủ 123', user: req.session.tenTaiKhoan } );
      // }    
      // res.send('hello');
-     res.send({"kq" : getData.getDataSheet('taikhoan_khoaphong','1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ')}) ;
+     const dateString = new Date();
+     const sheetTitle = dateString.getFullYear();
+     res.send({"kq" : getDataApiGgl.getData(sheetTitle)}) ;
 });	
 
 router.post('/check_loginServer', cors(), async function(req, res, next) {
