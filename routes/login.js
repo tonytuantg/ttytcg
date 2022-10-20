@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
      // res.send('hello');
      // const dateString = new Date();
      // const sheetTitle = dateString.getFullYear();
-     res.send({"kq" : getDataApiGgl.kq('taikhoan_khoaphong')}) ;
+     res.send({"kq" : 'hello'}) ;
 });	
 
 router.post('/check_loginServer', cors(), async function(req, res, next) {
