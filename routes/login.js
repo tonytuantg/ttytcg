@@ -29,7 +29,9 @@ router.get('/', async function(req, res, next) {
 });	
 
 router.post('/check_loginServer', async function(req, res, next) {
-    
+     res.header("Access-Control-Allow-Origin", "*");
+     res.header("Access-Control-Allow-Headers", "X-Requested-With");
+     next()
 
      const trangthai = 0;
      const tenTaiKhoan= '';
@@ -49,10 +51,9 @@ router.post('/check_loginServer', async function(req, res, next) {
           }         
      }
      // var result = { 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan };
-     res.send({ 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan }); 
-     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next()
+     // res.send({ 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan }); 
+     res.send('check login');
+     
 });
 
 module.exports = router;
