@@ -25,8 +25,8 @@ router.post('/check_loginServer', cors(), async function(req, res, next) {
     
      const trangthai = 0;
      const tenTaiKhoan= '';
-     var username = req.body.username;
-     var password = req.body.password;
+     const username = req.body.username;
+     const password = req.body.password;
      // var sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
      var sheetTitle = 'taikhoan_khoaphong';
      const user = await getDataApiGgl.kq(sheetTitle);
@@ -36,7 +36,7 @@ router.post('/check_loginServer', cors(), async function(req, res, next) {
           if(username == user.data.valueRanges[0].values[i][0] && password == user.data.valueRanges[0].values[i][2])
           {
                trangthai = 1;
-               tenTaiKhoan = user.data.valueRanges[0].values[i][0];
+               tenTaiKhoan = user.data.valueRanges[0].values[i][1];
           }          
      }
      var result = { 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan };
