@@ -37,11 +37,11 @@ router.post('/check_loginServer', cors(), async function(req, res, next) {
           {
                trangthai = 1;
                tenTaiKhoan = user.data.valueRanges[0].values[i][1];
-               var result = { 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan };
-               res.send(result); 
+               
           }       
      }
-     
+     var result = { 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan };
+     res.send(result); 
      // var result = { 'trangthai': '1', 'tenTaiKhoan': 'Tuan' };
      // res.send(result);   
      
