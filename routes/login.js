@@ -13,9 +13,9 @@ router.get('/', function(req, res, next) {
      //      res.render('home', { title: 'Trang chủ 123', user: req.session.tenTaiKhoan } );
      // }    
      // res.send('hello');
-     const dateString = new Date();
-     const sheetTitle = dateString.getFullYear();
-     res.send({"kq" : getDataApiGgl.kq(sheetTitle)}) ;
+     // const dateString = new Date();
+     // const sheetTitle = dateString.getFullYear();
+     res.send({"kq" : getDataApiGgl.kq('taikhoan_khoaphong')}) ;
 });	
 
 router.post('/check_loginServer', cors(), async function(req, res, next) {
