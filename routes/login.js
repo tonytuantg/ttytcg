@@ -21,7 +21,7 @@ router.get('/', async function(req, res, next) {
      // res.send({"kq" : user.data.valueRanges[0].values.length}) ;
 });	
 
-router.post('/check_loginServer', cors(), async function(req, res, next) {
+router.post('/check_loginServer', async function(req, res, next) {
     
      const trangthai = 0;
      const tenTaiKhoan= '';
