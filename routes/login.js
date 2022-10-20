@@ -17,8 +17,8 @@ router.get('/', async function(req, res, next) {
      // const sheetTitle = dateString.getFullYear();
      var sheetTitle = 'taikhoan_khoaphong';
      const user = await getDataApiGgl.kq(sheetTitle);
-     // res.send({"kq" : user.data.valueRanges[0].values[1][0]}) ;
-     res.send({"kq" : user.data.valueRanges[0].values.length}) ;
+     res.send({"kq" : user.data.valueRanges[0].values[1][2]}) ;
+     // res.send({"kq" : user.data.valueRanges[0].values.length}) ;
 });	
 
 router.post('/check_loginServer', cors(), async function(req, res, next) {
@@ -37,13 +37,10 @@ router.post('/check_loginServer', cors(), async function(req, res, next) {
           {
                trangthai = 1;
                tenTaiKhoan = user.data.valueRanges[0].values[i][0];
-               var result = { 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan };
-               res.send(result); 
-               return false;
-          }
-          
+          }          
      }
-     
+     var result = { 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan };
+     res.send(result); 
      // var result = { 'trangthai': '1', 'tenTaiKhoan': 'Tuan' };
      // res.send(result);   
      
