@@ -16,13 +16,19 @@ router.get('/', async function(req, res, next) {
      // const dateString = new Date();
      // const sheetTitle = dateString.getFullYear();
      var sheetTitle = 'taikhoan_khoaphong';
+     const kq = '';
      const user = await getDataApiGgl.kq(sheetTitle);
      const soDongTrongSheet = user.data.valueRanges[0].values.length;
-     res.send({"kq" : user.data.valueRanges[0].values[1][2]}) ;
+     for (var i = 1; i < soDongTrongSheet; i++) {
+          if(user.data.valueRanges[0].values[i][0] == 'khth' && user.data.valueRanges[0].values[i][2] == '123'){
+               kq = 1;
+          }
+     }
+     res.send({"kq" : kq}) ;
      // res.send({"kq" : user.data.valueRanges[0].values.length}) ;
 });	
 
-router.post('/check_loginServer', async function(req, res, next) {
+router.post('/check_loginServer', cors(), async function(req, res, next) {
     
      const trangthai = 0;
      const tenTaiKhoan= '';
