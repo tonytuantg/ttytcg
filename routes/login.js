@@ -21,7 +21,7 @@ router.get('/', async function(req, res, next) {
      // res.send({"kq" : user.data.valueRanges[0].values.length}) ;
 });	
 
-router.post('/check_loginServer', cors(), async function(req, res, next) {
+router.post('/check_loginServer', async function(req, res, next) {
     
      const trangthai = 0;
      const tenTaiKhoan= '';
@@ -38,7 +38,7 @@ router.post('/check_loginServer', cors(), async function(req, res, next) {
                trangthai = 1;
                tenTaiKhoan = user.data.valueRanges[0].values[i][1];
                
-          }       
+          }         
      }
      var result = { 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan };
      res.send(result); 
