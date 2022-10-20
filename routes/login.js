@@ -29,7 +29,10 @@ router.get('/', async function(req, res, next) {
 });	
 
 router.post('/check_loginServer', async function(req, res, next) {
-    
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next()
+
      const trangthai = 0;
      const tenTaiKhoan= '';
      const username = req.body.username;
