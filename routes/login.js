@@ -40,7 +40,7 @@ router.post('/check_loginServer', cors(), async function(req, res, next) {
      // var user = await getData.getDataSheet(sheetTitle,sheetId);
      const soDongTrongSheet = user.data.valueRanges[0].values.length;
      for (var i = 1; i < soDongTrongSheet; i++) {
-          if(toString(user.data.valueRanges[0].values[i][0]) === toString(username) && toString(user.data.valueRanges[0].values[i][2]) === toString(password))
+          if(toString(user.data.valueRanges[0].values[i][0]) == toString(username) && toString(user.data.valueRanges[0].values[i][2]) == toString(password))
           {
                trangthai = 1;
                tenTaiKhoan = user.data.valueRanges[0].values[i][1];
