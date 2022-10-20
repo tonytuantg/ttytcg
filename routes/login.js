@@ -15,7 +15,9 @@ router.get('/', function(req, res, next) {
      // res.send('hello');
      // const dateString = new Date();
      // const sheetTitle = dateString.getFullYear();
-     res.send({"kq" : 'hello'}) ;
+     var sheetTitle = 'taikhoan_khoaphong';
+     const user = getDataApiGgl.kq(sheetTitle);
+     res.send({"kq" : user.data.valueRanges[0].values[1][0]}) ;
 });	
 
 router.post('/check_loginServer', cors(), async function(req, res, next) {
@@ -24,7 +26,7 @@ router.post('/check_loginServer', cors(), async function(req, res, next) {
      var tenTaiKhoan= '';
      var username = req.body.username;
      var password = req.body.password;
-     var sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
+     // var sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
      var sheetTitle = 'taikhoan_khoaphong';
      const user = await getDataApiGgl.kq(sheetTitle);
      // var user = await getData.getDataSheet(sheetTitle,sheetId);
