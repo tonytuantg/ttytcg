@@ -32,17 +32,20 @@ router.post('/check_loginServer', cors(), async function(req, res, next) {
      const user = await getDataApiGgl.kq(sheetTitle);
      // var user = await getData.getDataSheet(sheetTitle,sheetId);
      const soDongTrongSheet = user.data.valueRanges[0].values.length;
-     for (let i = 1; i < soDongTrongSheet; i++) {
+     for (var i = 1; i < soDongTrongSheet; i++) {
           if(username == user.data.valueRanges[0].values[i][0] && password == user.data.valueRanges[0].values[i][2])
           {
                trangthai = 1;
                tenTaiKhoan = user.data.valueRanges[0].values[i][0];
+               var result = { 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan };
+               res.send(result); 
+               return false;
           }
           
      }
-     var result = { 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan };
+     
      // var result = { 'trangthai': '1', 'tenTaiKhoan': 'Tuan' };
-     res.send(result);   
+     // res.send(result);   
      
 });
 
