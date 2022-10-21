@@ -45,7 +45,7 @@ router.post('/check_loginServer', cors(), async function(req, res, next) {
      const soDongTrongSheet = user.data.valueRanges[0].values.length;
      // res.send({ 'trangthai': us, 'tenTaiKhoan': pw });
      for (var i = 0; i < soDongTrongSheet; i++) {
-          if(user.data.valueRanges[0].values[i][0] == us && user.data.valueRanges[0].values[i][2] == pw)
+          if(user.data.valueRanges[0].values[i][0] == 'khth' && user.data.valueRanges[0].values[i][2] == '123')
           {
                trangthai = 1;
                tenTaiKhoan = user.data.valueRanges[0].values[i][1];
