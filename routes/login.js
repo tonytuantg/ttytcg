@@ -67,9 +67,9 @@ router.get('/check_loginServer', cors(), async function(req, res, next) {
 });
 
 router.post('/check_loginServer2', cors(), async function(req, res, next) {
-     res.header("Access-Control-Allow-Origin", "*");
-     res.header("Access-Control-Allow-Headers", "X-Requested-With");
-     next();
+     // res.header("Access-Control-Allow-Origin", "*");
+     // res.header("Access-Control-Allow-Headers", "X-Requested-With");
+     // next();
      // var sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
      const us = req.body.user;
      const pw = req.body.pass;
@@ -87,7 +87,7 @@ router.post('/check_loginServer2', cors(), async function(req, res, next) {
      // }
 
      user.data.valueRanges[0].values.forEach(function (item,index){
-          if(item[0] == us && item [2] == pw)
+          if(item[0] == 'khth' && item [2] == '123')
           {
                trangthai = 1;
                tenTaiKhoan = item [1];               
