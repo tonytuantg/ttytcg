@@ -87,7 +87,7 @@ router.post('/check_loginServer2', async function(req, res, next) {
      // }
 
      user.data.valueRanges[0].values.forEach(function (item,index){
-          if(item[0] == toString(us) && item [2] == toString(pw))
+          if(item[0] == 'khth' && item [2] == '123')
           {
                trangthai = 1;
                tenTaiKhoan = item [1];               
