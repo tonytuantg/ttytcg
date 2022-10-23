@@ -71,8 +71,8 @@ router.post('/check_loginServer2', async function(req, res, next) {
      // res.header("Access-Control-Allow-Headers", "X-Requested-With");
      // next();
      // var sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
-     const us = req.body.user;
-     const pw = req.body.pass;
+     const us = req.query.user;
+     const pw = req.query.pass;
      
      var sheetTitle = 'taikhoan_khoaphong';
      const user = await getDataApiGgl.kq(sheetTitle);
@@ -87,7 +87,7 @@ router.post('/check_loginServer2', async function(req, res, next) {
      // }
 
      user.data.valueRanges[0].values.forEach(function (item,index){
-          if(item[0] == us && item [2] == pw)
+          if(item[0] == us.trim && item [2] == pw.trim)
           {
                trangthai = 1;
                tenTaiKhoan = item [1];               
