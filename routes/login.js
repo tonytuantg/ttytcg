@@ -73,19 +73,13 @@ router.post('/check_loginServer2', async function(req, res, next) {
      // var sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
      const us = req.query.user;
      const pw = req.query.pass;
-     
-     var sheetTitle = 'taikhoan_khoaphong';
-     const user = await getDataApiGgl.kq(sheetTitle);
-     const soDongTrongSheet = user.data.valueRanges[0].values.length;
-     
-     for (var i = 1; i <= soDongTrongSheet; i++) {
-          if(user.data.valueRanges[0].values[i][0] == us && user.data.valueRanges[0].values[i][2] == pw)
-          {
-               trangthai = 1;
-               tenTaiKhoan = user.data.valueRanges[0].values[i][1];     
-               res.send({ 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan });           
-          }                
+     var checked = check(us,pw);
+     if(checked == 1){
+          res.send('1');
+     }else{
+          res.send('0');
      }
+     
 
      // user.data.valueRanges[0].values.forEach(function (item,index){
      //      if(item[0] == 'khth' && item [2] == '123')
@@ -97,4 +91,20 @@ router.post('/check_loginServer2', async function(req, res, next) {
 
      // res.send({ 'trangthai': us, 'tenTaiKhoan': pw }); 
 });
+
+async function check(us,pw){
+     var sheetTitle = 'taikhoan_khoaphong';
+     const user = await getDataApiGgl.kq(sheetTitle);
+     const soDongTrongSheet = user.data.valueRanges[0].values.length;
+     
+     for (var i = 1; i <= soDongTrongSheet; i++) {
+          if(user.data.valueRanges[0].values[i][0] == us && user.data.valueRanges[0].values[i][2] == pw)
+          {
+               trangthai = 1;
+               tenTaiKhoan = user.data.valueRanges[0].values[i][1];                            
+          }                
+     }
+     return trangthai;
+}
+
 module.exports = router;
