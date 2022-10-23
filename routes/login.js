@@ -101,10 +101,11 @@ async function check(us,pw){
           if(user.data.valueRanges[0].values[i][0] == us && user.data.valueRanges[0].values[i][2] == pw)
           {
                trangthai = 1;
-               tenTaiKhoan = user.data.valueRanges[0].values[i][1];                            
+               return trangthai;
+               // tenTaiKhoan = user.data.valueRanges[0].values[i][1];                            
           }                
      }
-     return trangthai;
+     
 }
 
 module.exports = router;
