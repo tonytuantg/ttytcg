@@ -86,6 +86,6 @@ router.post('/check_loginServer2', async function(req, res, next) {
      //      }       
          
      // }
-     res.send({ 'trangthai': 'us', 'tenTaiKhoan': 'pw' }); 
+     res.send({ 'trangthai': us, 'tenTaiKhoan': pw }); 
 });
 module.exports = router;
