@@ -78,13 +78,14 @@ router.post('/check_loginServer2', async function(req, res, next) {
      const user = await getDataApiGgl.kq(sheetTitle);
      const soDongTrongSheet = user.data.valueRanges[0].values.length;
      
-     // for (var i = 1; i <= soDongTrongSheet; i++) {
-     //      if(user.data.valueRanges[0].values[i][0] == us && user.data.valueRanges[0].values[i][2] == pw)
-     //      {
-     //           trangthai = 1;
-     //           tenTaiKhoan = user.data.valueRanges[0].values[i][1];               
-     //      }                
-     // }
+     for (var i = 1; i <= soDongTrongSheet; i++) {
+          if(user.data.valueRanges[0].values[i][0] == us && user.data.valueRanges[0].values[i][2] == pw)
+          {
+               trangthai = 1;
+               tenTaiKhoan = user.data.valueRanges[0].values[i][1];     
+               res.send({ 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan });           
+          }                
+     }
 
      // user.data.valueRanges[0].values.forEach(function (item,index){
      //      if(item[0] == 'khth' && item [2] == '123')
@@ -94,6 +95,6 @@ router.post('/check_loginServer2', async function(req, res, next) {
      //      }  
      // })
 
-     res.send({ 'trangthai': us, 'tenTaiKhoan': pw }); 
+     // res.send({ 'trangthai': us, 'tenTaiKhoan': pw }); 
 });
 module.exports = router;
