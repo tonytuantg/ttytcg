@@ -28,32 +28,26 @@ router.get('/', async function(req, res, next) {
      // res.send({"kq" : user.data.valueRanges[0].values.length}) ;  cors(),
 });	
 
-router.post('/check_loginServer', cors(), async function(req, res, next) {
+router.get('/check_loginServer', cors(), async function(req, res, next) {
      // res.header("Access-Control-Allow-Origin", "*");
      // res.header("Access-Control-Allow-Headers", "X-Requested-With");
      // next();
-
-     var trangthai = 0;
-     var tenTaiKhoan= 'd';
-     var kq = '';
-     var us = req.query.username;
-     var pw = req.query.password;
      // var sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
      var sheetTitle = 'taikhoan_khoaphong';
      const user = await getDataApiGgl.kq(sheetTitle);
      // var user = await getData.getDataSheet(sheetTitle,sheetId);
-     const soDongTrongSheet = user.data.valueRanges[0].values.length;
+     // const soDongTrongSheet = user.data.valueRanges[0].values.length;
      // res.send({ 'trangthai': us, 'tenTaiKhoan': pw });
-     for (var i = 0; i < soDongTrongSheet; i++) {
-          if(user.data.valueRanges[0].values[i][0] == 'khth' && user.data.valueRanges[0].values[i][2] == '123')
-          {
-               trangthai = 1;
-               tenTaiKhoan = user.data.valueRanges[0].values[i][1];
+     // for (var i = 0; i < soDongTrongSheet; i++) {
+     //      if(user.data.valueRanges[0].values[i][0] == 'khth' && user.data.valueRanges[0].values[i][2] == '123')
+     //      {
+     //           trangthai = 1;
+     //           tenTaiKhoan = user.data.valueRanges[0].values[i][1];
                
-          }       
+     //      }       
          
-     }
-     res.send({ 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan }); 
+     // }
+     res.send(user.data.valueRanges[0].values); 
      // user.data.valueRanges[0].values.forEach(function (item,index){
      //      if(item[0] == toString(us) && item [2]== toString(pw))
      //      {
