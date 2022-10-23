@@ -69,8 +69,8 @@ router.post('/check_loginServer2', async function(req, res, next) {
      // res.header("Access-Control-Allow-Headers", "X-Requested-With");
      // next();
      // var sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
-     const us = req.query.user;
-     const pw = req.query.pass;
+     const us = req.params.user;
+     const pw = req.params.pass;
      const trangthai = 0;
      const tenTaiKhoan = '';
      var sheetTitle = 'taikhoan_khoaphong';
@@ -89,8 +89,7 @@ router.post('/check_loginServer2', async function(req, res, next) {
           if(item[0] == toString(us) && item [2]== toString(pw))
           {
                trangthai = 1;
-               tenTaiKhoan = item [1];
-               
+               tenTaiKhoan = item [1];               
           }  
      })
 
