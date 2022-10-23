@@ -64,10 +64,10 @@ router.get('/check_loginServer', cors(), async function(req, res, next) {
      
 });
 
-router.post('/check_loginServer2', cors(), async function(req, res, next) {
-     res.header("Access-Control-Allow-Origin", "*");
-     res.header("Access-Control-Allow-Headers", "X-Requested-With");
-     next();
+router.post('/check_loginServer2', async function(req, res, next) {
+     // res.header("Access-Control-Allow-Origin", "*");
+     // res.header("Access-Control-Allow-Headers", "X-Requested-With");
+     // next();
      // var sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
      const us = req.query.username;
      const pw = req.query.password;
@@ -86,7 +86,7 @@ router.post('/check_loginServer2', cors(), async function(req, res, next) {
           }       
          
      }
-     res.send({ 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan }); 
+     res.send({ 'trangthai': us, 'tenTaiKhoan': pw }); 
      // res.send(user.data.valueRanges[0].values); 
      // user.data.valueRanges[0].values.forEach(function (item,index){
      //      if(item[0] == toString(us) && item [2]== toString(pw))
