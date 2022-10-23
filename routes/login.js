@@ -74,7 +74,7 @@ router.post('/check_loginServer2', async function(req, res, next) {
      const us = req.query.user;
      const pw = req.query.pass;
      var checked = await check(us,pw);
-     if(trangthai == 1){
+     if(checked == 1){
           res.send('1');
      }else{
           res.send('0');
@@ -100,8 +100,8 @@ async function check(us,pw){
      for (var i = 1; i <= soDongTrongSheet; i++) {
           if(user.data.valueRanges[0].values[i][0] == us && user.data.valueRanges[0].values[i][2] == pw)
           {
-               trangthai = 1;
-               return trangthai;
+               // trangthai = 1;
+               return 1;
                // tenTaiKhoan = user.data.valueRanges[0].values[i][1];                            
           }                
      }
