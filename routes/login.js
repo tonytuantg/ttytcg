@@ -66,13 +66,13 @@ router.get('/check_loginServer', cors(), async function(req, res, next) {
      
 });
 
-router.post('/check_loginServer2', async function(req, res, next) {
+router.post('/check_loginServer2', cors(), async function(req, res, next) {
      // res.header("Access-Control-Allow-Origin", "*");
      // res.header("Access-Control-Allow-Headers", "X-Requested-With");
      // next();
      // var sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
-     const us = req.query.user;
-     const pw = req.query.pass;
+     const us = req.body.user;
+     const pw = req.body.pass;
      
      var sheetTitle = 'taikhoan_khoaphong';
      const user = await getDataApiGgl.kq(sheetTitle);
