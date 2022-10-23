@@ -74,7 +74,7 @@ router.post('/check_loginServer2', async function(req, res, next) {
      const us = req.query.user;
      const pw = req.query.pass;
      var checked = await check(us,pw);
-     if(checked == 1){
+     if(arr.length >= 1){
           res.send('1');
      }else{
           res.send('0');
@@ -91,7 +91,7 @@ router.post('/check_loginServer2', async function(req, res, next) {
 
      // res.send({ 'trangthai': us, 'tenTaiKhoan': pw }); 
 });
-
+var arr = [];
 async function check(us,pw){
      var sheetTitle = 'taikhoan_khoaphong';
      const user = await getDataApiGgl.kq(sheetTitle);
@@ -101,7 +101,7 @@ async function check(us,pw){
           if(user.data.valueRanges[0].values[i][0] == us && user.data.valueRanges[0].values[i][2] == pw)
           {
                // trangthai = 1;
-               return 1;
+               arr.push(user.data.valueRanges[0].values[i][1]);
                // tenTaiKhoan = user.data.valueRanges[0].values[i][1];                            
           }                
      }
