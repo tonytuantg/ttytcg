@@ -73,7 +73,7 @@ router.post('/check_loginServer2', async function(req, res, next) {
      // var sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
      const us = req.query.user;
      const pw = req.query.pass;
-     var checked = await check(us,pw);
+     await check(us,pw);
      if(arr.length >= 1){
           res.send('1');
      }else{
@@ -105,6 +105,7 @@ async function check(us,pw){
                // tenTaiKhoan = user.data.valueRanges[0].values[i][1];                            
           }                
      }
+     return arr;
      
 }
 
