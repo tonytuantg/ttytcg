@@ -5,8 +5,8 @@ var router = express.Router();
 
 const getData = require('../getDataGoogleSheet');
 const getDataApiGgl = require('../getDataUsingGoogleApi');
-const trangthai = 0;
-const tenTaiKhoan = '';
+var trangthai = 0;
+var tenTaiKhoan = '';
 
 router.get('/', async function(req, res, next) {
      // if(!req.session.tenTaiKhoan){
