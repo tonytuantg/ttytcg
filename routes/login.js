@@ -64,4 +64,43 @@ router.get('/check_loginServer', cors(), async function(req, res, next) {
      
 });
 
+router.post('/check_loginServer2', cors(), async function(req, res, next) {
+     // res.header("Access-Control-Allow-Origin", "*");
+     // res.header("Access-Control-Allow-Headers", "X-Requested-With");
+     // next();
+     // var sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
+     const us = req.query.username;
+     const pw = req.query.password;
+     const trangthai = 0;
+     const tenTaiKhoan = '';
+     var sheetTitle = 'taikhoan_khoaphong';
+     const user = await getDataApiGgl.kq(sheetTitle);
+     const soDongTrongSheet = user.data.valueRanges[0].values.length;
+     
+     for (var i = 1; i <= soDongTrongSheet; i++) {
+          if(user.data.valueRanges[0].values[i][0] == us && user.data.valueRanges[0].values[i][2] == pw)
+          {
+               trangthai = 1;
+               tenTaiKhoan = user.data.valueRanges[0].values[i][1];
+               
+          }       
+         
+     }
+     res.send({ 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan }); 
+     // res.send(user.data.valueRanges[0].values); 
+     // user.data.valueRanges[0].values.forEach(function (item,index){
+     //      if(item[0] == toString(us) && item [2]== toString(pw))
+     //      {
+     //           trangthai = 1;
+     //           tenTaiKhoan = item [1];
+               
+     //      }  
+     // })
+     
+     // res.send({ 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan }); 
+     // var result = { 'trangthai': trangthai, 'tenTaiKhoan': tenTaiKhoan };
+     // res.send({ 'trangthai': username, 'tenTaiKhoan': password }); 
+     // res.send({'kq' : trangthai});
+     
+});
 module.exports = router;
