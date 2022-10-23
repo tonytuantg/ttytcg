@@ -5,6 +5,8 @@ var router = express.Router();
 
 const getData = require('../getDataGoogleSheet');
 const getDataApiGgl = require('../getDataUsingGoogleApi');
+const trangthai = 0;
+const tenTaiKhoan = '';
 
 router.get('/', async function(req, res, next) {
      // if(!req.session.tenTaiKhoan){
@@ -71,8 +73,7 @@ router.post('/check_loginServer2', async function(req, res, next) {
      // var sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
      const us = req.query.user;
      const pw = req.query.pass;
-     const trangthai = 0;
-     const tenTaiKhoan = '';
+     
      var sheetTitle = 'taikhoan_khoaphong';
      const user = await getDataApiGgl.kq(sheetTitle);
      const soDongTrongSheet = user.data.valueRanges[0].values.length;
