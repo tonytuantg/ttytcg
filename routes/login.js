@@ -74,7 +74,7 @@ router.post('/check_loginServer2', async function(req, res, next) {
      const us = req.query.user;
      const pw = req.query.pass;
      var checked = await check(us,pw);
-     if(checked == 1){
+     if(trangthai == 1){
           res.send('1');
      }else{
           res.send('0');
