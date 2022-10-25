@@ -1,6 +1,6 @@
 var express = require('express');
 // const reader = require('xlsx');
-// var cors = require('cors');
+const cors = require('cors');
 
 var router = express.Router();
 
@@ -9,7 +9,7 @@ const addDataSheet = require('../addDataGoogleSheet');
 
 const getDataGoogleSheetAip = require('../getDataUsingGoogleApi');
 
-router.get('/getSoCvCuoi', async function(req, res, next){
+router.get('/getSoCvCuoi',cors(), async function(req, res, next){
      const dateString = new Date();
 
      // const sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
