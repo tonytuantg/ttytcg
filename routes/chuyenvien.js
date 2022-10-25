@@ -53,7 +53,7 @@ router.post('/lichsuCV', async function(req, res, next){
      res.send(data.data.valueRanges[0].values);
 })
 
-router.post('/themMoiCV', async function(req, res, next){
+router.post('/themMoiCV', cors(), async function(req, res, next){
      const dateString = new Date();
 
      const sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
