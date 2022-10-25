@@ -105,7 +105,7 @@ router.post('/getRowsIf', cors(), async function(req, res, next){
      res.send(arrData);
 })
 
-router.post('/updateRow', async function(req, res, next){
+router.post('/updateRow', cors(), async function(req, res, next){
 
      const soChuyen = req.body.soChuyen;
      const rowIndex = parseInt(req.body.rowIndex) + 1;
