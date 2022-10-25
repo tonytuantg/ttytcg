@@ -44,7 +44,7 @@ router.get('/checkdacocvchua', async function(req, res, next){
      
 })
 
-router.post('/lichsuCV', async function(req, res, next){
+router.post('/lichsuCV', cors(), async function(req, res, next){
      const sheetId = '1NuydN_rCsb9X66qVct9YpowCFSVa4D0f6o8e7obAUMQ';
      const sheetTitle = req.body.sheetTitle;
      // const data = await getDataSheet.getDataSheet(sheetTitle,sheetId);
