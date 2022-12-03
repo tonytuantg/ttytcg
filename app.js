@@ -38,7 +38,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors({
-  origin: '*',
+  origin: 'http://ttytcg.epizy.com/',
   methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }));
 
