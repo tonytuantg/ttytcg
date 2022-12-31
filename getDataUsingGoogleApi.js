@@ -11,7 +11,7 @@ async function getdata(shTitle){
    const response = await sheets.spreadsheets.values.batchGet(
       {
          spreadsheetId: sheetId,
-         ranges: [sheetTitle,sheetTitle],
+         ranges: ['2023','2023],
          auth : authClient
       //    ranges: ['Sheet1!A2:E','Sheet2!A2:E']
       }
