@@ -6,11 +6,12 @@ async function getdata(shTitle){
    const authClient = new google.auth.JWT(key.client_email, '', key.private_key, 'https://www.googleapis.com/auth/spreadsheets');
    
    const dateString = new Date();
+   const sheetTitle = dateString.getFullYear();
    // const sheetTitle = '2022';
    const response = await sheets.spreadsheets.values.batchGet(
       {
          spreadsheetId: sheetId,
-         ranges: [shTitle,shTitle],
+         ranges: [sheetTitle,sheetTitle],
          auth : authClient
       //    ranges: ['Sheet1!A2:E','Sheet2!A2:E']
       }
